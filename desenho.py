@@ -20,6 +20,33 @@ def painel(tela, x, y, largura, altura): #desenha um retangulo escuro atrás do 
     # retângulo escuro atrás do texto, pra dar pra ler em cima do cenário
     pygame.draw.rect(tela, (30, 6, 12), (x, y, largura, altura), border_radius=8) #border_radius = 8 arredonda os cantos
 
+def desenha_coracao(tela, x, y): #montar um coração
+    pygame.draw.circle(tela, VERMELHO, (x - 5, y), 6) #circulos lado a lado
+    pygame.draw.circle(tela, VERMELHO, (x + 5, y), 6)
+    pygame.draw.polygon(tela, VERMELHO, [(x - 11, y + 2), (x + 11, y + 2), (x, y + 14)]) #forma a ponta de baixo
+
+def fazer_estrela(t=1): #cria e devolve a imagem de uma estrela ninja
+    # Cria a IMAGEM de uma estrela ninja (t = tamanho: 1 normal, 1.5 maior...)
+    # 4 pontas compridas (cima, direita, baixo, esquerda) e 4 cantinhos curtos no meio
+    lado = int(28 * t)
+    imagem = pygame.Surface((lado, lado), pygame.SRCALPHA)  # fundo transparente
+    c = lado / 2                                            # centro da imagem
+    p = 13 * t                                              # ponta comprida
+    k = 3.5 * t                                             # cantinho curto
+    pontos = [(c, c - p), (c + k, c - k),                   # cima
+              (c + p, c), (c + k, c + k),                   # direita
+              (c, c + p), (c - k, c + k),                   # baixo
+              (c - p, c), (c - k, c - k)]                   # esquerda
+    pygame.draw.polygon(imagem, PRATA, pontos)
+    pygame.draw.circle(imagem, CINZA, (c, c), 3 * t)        # bolinha do meio
+    return imagem #devolve uma imagem, sem desenhar na tela 
+
+
+def desenha_estrela(superficie, x, y, angulo=0, t=1):
+    # Desenha uma estrela com o centro em (x, y), girada "angulo" graus
+    # "superficie" pode ser a tela OU a imagem de um sprite
+    imagem = pygame.transform.rotate(fazer_estrela(t), angulo) #usa a outra funcao fazer_estrela(t), gira a img
+    superficie.blit(imagem, imagem.get_rect(center=(x, y))) #usa o get center para manter a estrela centralizada mesmo depois de girar, pois a imagem rotacionada muda de tamanho
 
 
 
