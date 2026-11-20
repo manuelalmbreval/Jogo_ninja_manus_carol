@@ -1,0 +1,1 @@
+#file para carregar todas as imagens, fontes e sons 
