@@ -75,3 +75,8 @@ def carregar_assets():
         print("Jogo sem som:", erro)                        # se der erro, o jogo continua sem som
 
     return assets
+
+def tocar(assets, nome):
+    # só toca se o som carregou
+    if nome in assets["sons"]:
+        assets["sons"][nome].play()
