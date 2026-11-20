@@ -47,3 +47,31 @@ def carregar_assets():
         # Obs: essa linha NÃO abre a imagem, só guarda o endereço em "caminho".
         caminho = os.path.join(PASTA_IMAGENS, "resina_caretas", careta + ".png")
         assets["caretas"][careta] = carregar_imagem(caminho, 48, 48)   # original: 48x48
+
+    #cenários 
+    assets["jardim"] = []                                   # os 8 takes do jardim
+    for i in range(8):
+        caminho = os.path.join(PASTA_IMAGENS, "labirinto", "labirinto_" + str(i) + ".png")
+        assets["jardim"].append(carregar_cenario(caminho))
+    # mapa de colisão: BRANCO = chão, PRETO = parede
+    assets["mapa"] = carregar_cenario(os.path.join(PASTA_IMAGENS, "labirinto", "mapa_colisao.png"))
+    assets["templo"] = carregar_cenario(os.path.join(PASTA_IMAGENS, "fase2", "templo.png"))
+    assets["fundo"] = carregar_cenario(os.path.join(PASTA_IMAGENS, "fundo.png"))
+
+    #fontes 
+    nomes_fonte = "arialroundedmtbold,comicsansms,segoeuiblack,verdana"
+    assets["fonte_titulo"] = pygame.font.SysFont(nomes_fonte, 64, bold=True)
+    assets["fonte"] = pygame.font.SysFont(nomes_fonte, 28, bold=True)
+    assets["fonte_pequena"] = pygame.font.SysFont(nomes_fonte, 20)
+
+    #sons 
+    assets["sons"] = {}
+    try:
+        pygame.mixer.music.load(os.path.join(PASTA_SONS, "musica_kungfu.wav"))
+        pygame.mixer.music.set_volume(0.4)
+        for nome in ["estrela", "dano", "pulo", "erro", "vitoria", "boing"]:
+            assets["sons"][nome] = pygame.mixer.Sound(os.path.join(PASTA_SONS, nome + ".wav"))
+    except Exception as erro:
+        print("Jogo sem som:", erro)                        # se der erro, o jogo continua sem som
+
+    return assets
