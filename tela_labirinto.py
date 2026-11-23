@@ -26,29 +26,29 @@ def tela_labirinto (tela, assets, dados):
         bolas.add(bola)
         velocidade= velocidade + AUMENTO_VELOCIDADE #deixa cada bola mais rápida
 
-        ninja = Ninja(assets, dados["personagem"])
-        todos.add(ninja)# add por ultimo, ficando desenhado por cima 
+    ninja = Ninja(assets, dados["personagem"])
+    todos.add(ninja)# add por ultimo, ficando desenhado por cima 
 
-        vidas = 3 
-        pegas = 0 
-        total = len(estrelas)
-        dados["inicio"]= pygame.time.get_ticks() # o tempo começa contar agora
+    vidas = 3 
+    pegas = 0 
+    total = len(estrelas)
+    dados["inicio"]= pygame.time.get_ticks() # o tempo começa contar agora
 
-        estado = LABIRINTO
-        while estado == LABIRINTO:
-            relogio.tick(FPS)
-            agora = pygame.time.get_ticks()
+    estado = LABIRINTO
+    while estado == LABIRINTO:
+        relogio.tick(FPS)
+        agora = pygame.time.get_ticks()
 
-            #Trata eventos
-            for evento in pygame.event.get():
-                if evento.type == pygame.QUIT:
-                    estado = SAIR
-                if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
-                    estado = SAIR
-                if evento.type == pygame.MOUSEBUTTONDOWN:
-                # DICA: mostra no terminal onde você clicou (bom pra mudar estrela de lugar)
-                    print("clicou em:", evento.pos, " é parede?",
-                            eh_parede(assets["mapa"], evento.pos[0], evento.pos[1]))
+        #Trata eventos
+        for evento in pygame.event.get():
+            if evento.type == pygame.QUIT:
+                estado = SAIR
+            if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
+                estado = SAIR
+            if evento.type == pygame.MOUSEBUTTONDOWN:
+            # DICA: mostra no terminal onde você clicou (bom pra mudar estrela de lugar)
+                print("clicou em:", evento.pos, " é parede?",
+                        eh_parede(assets["mapa"], evento.pos[0], evento.pos[1]))
 
 
         # ----- Atualiza (chama o update() de TODOS os sprites)
