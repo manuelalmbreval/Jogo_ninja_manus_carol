@@ -7,6 +7,11 @@ from tela_escolha import tela_escolha
 from tela_labirinto import tela_labirinto
 from tela_templo import tela_templo
 from tela_final import tela_final
+from tela_inicio import tela_inicio
+
+
+
+
 
 #inicializacao 
 pygame.init()
@@ -29,6 +34,13 @@ dados = {
 }
 
 # Troca de telas 
+
+estado = tela_inicio(tela)
+
+if estado == ESCOLHA:
+    estado = tela_escolha(tela, assets, dados)
+
+
 estado = ESCOLHA
 while estado != SAIR:
     if estado == ESCOLHA:

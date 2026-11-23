@@ -5,7 +5,7 @@ from config import FPS, ESCOLHA, SAIR
 def tela_inicio(tela):
     relogio = pygame.time.Clock()
 
-    capa = pygame.image.load("começo.png").convert()
+    capa = pygame.image.load("imagens/começo.png").convert()
     capa = pygame.transform.scale(capa, tela.get_size())
 
     while True:
