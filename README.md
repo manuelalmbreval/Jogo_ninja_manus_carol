@@ -132,6 +132,7 @@ Vença as duas fases e o jogo mostra quanto tempo você levou.
 
 # Estrutura do projeto
 
+Resina Strikes Back - Jogo Pygame: https://youtu.be/fPYB7uB1CGw
 
 ```
 Jogo_ninja_manus_carol/
