@@ -177,3 +177,5 @@ Projeto feito por:
 # Licença
 
 Este é um projeto acadêmico e ainda não tem uma licença definida.
+
+Resina Strikes Back - Jogo Pygame: https://youtu.be/fPYB7uB1CGw
