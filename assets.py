@@ -8,18 +8,18 @@ from config import LARGURA, ALTURA, PASTA_IMAGENS, PASTA_SONS, PASTA_DO_PERSONAG
 
 def carregar_imagem(caminho, largura, altura):
     # PNG COM fundo transparente (personagens), já no tamanho pedido
-    imagem = pygame.image.load(caminho).convert_alpha()
+    imagem = pygame.image.load(caminho).convert_alpha() #Fundo Transparente
     return pygame.transform.scale(imagem, (largura, altura))
 
 
 def carregar_cenario(caminho):
     # PNG de cenário (sem transparência = desenha mais rápido), do tamanho da tela
-    imagem = pygame.image.load(caminho).convert()
+    imagem = pygame.image.load(caminho).convert() #Fundo
     return pygame.transform.scale(imagem, (LARGURA, ALTURA))
 
 
 def carregar_assets():
-    assets = {}
+    assets = {} #dicionário que chama assets para carregar coisas do jogo
 
     #personagens
     # assets["personagens"]["ninja1"]["andando"] = lista com as 6 imagens do Enzo andando
