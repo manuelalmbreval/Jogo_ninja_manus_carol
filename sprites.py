@@ -7,11 +7,10 @@ from desenho import fazer_estrela, desenha_estrela
 
 
 def eh_parede(mapa, x, y):
-    # Olha a COR do mapa de colisão nesse ponto. Branco = chão, preto = parede.
-    if x < 0 or x >= LARGURA or y < 0 or y >= ALTURA:      # fora da tela = parede
-        return True
-    cor = mapa.get_at((int(x), int(y)))                     # cor = (vermelho, verde, azul, transparência)
-    return cor[0] < 128                                     # escuro (perto do preto) = parede
+    
+    if x < 0 or x >= LARGURA or y < 0 or y >= ALTURA:      
+    cor = mapa.get_at((int(x), int(y)))                     
+    return cor[0] < 128                                     
 
 
 
@@ -21,7 +20,7 @@ class Personagem(pygame.sprite.Sprite):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
 
-        # Aumenta as imagens UMA vez só, aqui no começo
+        
         self.animacoes = {}
         for nome_estado in assets["personagens"][nome]:
             lista = []
@@ -29,9 +28,9 @@ class Personagem(pygame.sprite.Sprite):
                 lista.append(pygame.transform.scale(imagem, (32 * escala, 32 * escala)))
             self.animacoes[nome_estado] = lista
 
-        self.estado = estado              # "parado", "andando" ou "correndo"
-        self.esquerda = False             # olhando pra esquerda?
-        self.frame = 0                    # qual imagem da animação está aparecendo
+        self.estado = estado              
+        self.esquerda = False             
+        self.frame = 0                    
         self.ultima_troca = pygame.time.get_ticks()
 
         self.image = self.animacoes[self.estado][0]
@@ -41,7 +40,7 @@ class Personagem(pygame.sprite.Sprite):
     def mudar_estado(self, novo_estado):
         if novo_estado != self.estado:
             self.estado = novo_estado
-            self.frame = 0                # começa a nova animação do início
+            self.frame = 0               
 
     def animar(self):
         # Mesma ideia da Explosion da Navinha: troca de imagem de tempos em tempos
@@ -51,12 +50,12 @@ class Personagem(pygame.sprite.Sprite):
             self.frame = self.frame + 1
 
         lista = self.animacoes[self.estado]
-        self.frame = self.frame % len(lista)      # chegou no fim? volta pro começo
+        self.frame = self.frame % len(lista)      
         imagem = lista[self.frame]
         if self.esquerda:
-            imagem = pygame.transform.flip(imagem, True, False)   # espelha na horizontal
+            imagem = pygame.transform.flip(imagem, True, False)   
 
-        centro = self.rect.center                 # guarda o centro pra imagem não "pular"
+        centro = self.rect.center                 
         self.image = imagem
         self.rect = self.image.get_rect()
         self.rect.center = centro
@@ -66,9 +65,7 @@ class Personagem(pygame.sprite.Sprite):
 
 
 class Ninja(Personagem):
-    # O personagem que ANDA no labirinto.
-    # "Ninja(Personagem)" = o Ninja é um Personagem, com tudo que ele tem,
-    # mais o movimento pelas setas.
+    
     def __init__(self, assets, nome):
         Personagem.__init__(self, assets, nome, INICIO[0], INICIO[1])
         self.mapa = assets["mapa"]
@@ -108,7 +105,7 @@ class Ninja(Personagem):
         if dx > 0:
             self.esquerda = False
 
-        # olha a cor do MAPA um pouco à frente (3 passos); se for parede, não anda
+        
         x, y = self.rect.center
         if not eh_parede(self.mapa, x + dx * 3, y + dy * 3):
             x = x + dx
