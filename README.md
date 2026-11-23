@@ -162,9 +162,9 @@ Projeto feito por:
 
 | | Nome | GitHub |
 |---|------|--------|
-| 🥷 | **Carolina** | [@carolinabf4](https://github.com/carolinabf4) |
-| 🥷 | **Manuela** | [@manuelalmbreval](https://github.com/manuelalmbreval) |
-| 🥷 | **Manuela** | [@manuabarb](https://github.com/manuabarb) |
+| 🥷 | **Carolina Bosco Ferreira** | [@carolinabf4](https://github.com/carolinabf4) |
+| 🥷 | **Manuela Lobo Moutinho Breval** | [@manuelalmbreval](https://github.com/manuelalmbreval) |
+| 🥷 | **Manuela Sousa Barbosa** | [@manuabarb](https://github.com/manuabarb) |
 
 # Ferramentas e referências
 
