@@ -19,3 +19,28 @@ pygame.display.set_caption("Resina Strikes Back")
 assets = carregar_assets()                 # tem que ser DEPOIS de abrir a tela
 if len(assets["sons"]) > 0:
     pygame.mixer.music.play(-1)            # -1 = repete para sempre
+
+# Informações que passam de uma tela pra outra
+dados = {
+    "personagem": "ninja1",   # quem foi escolhido
+    "motivo": "",             # por que perdeu
+    "inicio": 0,              # quando começou a fase 1
+    "tempo_final": 0,         # quanto tempo levou pra ganhar
+}
+
+# Troca de telas 
+estado = ESCOLHA
+while estado != SAIR:
+    if estado == ESCOLHA:
+        estado = tela_escolha(tela, assets, dados)
+    elif estado == LABIRINTO:
+        estado = tela_labirinto(tela, assets, dados)
+    elif estado == TEMPLO:
+        estado = tela_templo(tela, assets, dados)
+    elif estado == VITORIA or estado == GAME_OVER:
+        estado = tela_final(tela, assets, dados, estado)
+    else:
+        estado = SAIR
+
+#finalizacao 
+pygame.quit()
