@@ -12,3 +12,10 @@ from tela_final import tela_final
 pygame.init()
 pygame.mixer.init()
 
+# SCALED = o pygame estica o 1920x1080 sozinho pro tamanho do seu monitor
+tela = pygame.display.set_mode((LARGURA, ALTURA), pygame.FULLSCREEN | pygame.SCALED)
+pygame.display.set_caption("Resina Strikes Back")
+
+assets = carregar_assets()                 # tem que ser DEPOIS de abrir a tela
+if len(assets["sons"]) > 0:
+    pygame.mixer.music.play(-1)            # -1 = repete para sempre
