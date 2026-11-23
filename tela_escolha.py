@@ -47,8 +47,7 @@ def tela_escolha(tela, assets, dados):
         escreve(tela, "3 - " + NOMES["samurai"], assets["fonte_pequena"], BRANCO, CX + 200, CY + 110)
         escreve(tela, "Fase 1: pegue as 6 estrelas ninja, fuja das bolas de fogo e chegue no gongo",
                 assets["fonte_pequena"], BRANCO, CX, ALTURA - 110)
-        escreve(tela, "Fase 2: jogue as estrelas no templo sem fazer o samurai pular!",
-                assets["fonte_pequena"], BRANCO, CX, ALTURA - 80)
+        
 
         pygame.display.flip()
 
