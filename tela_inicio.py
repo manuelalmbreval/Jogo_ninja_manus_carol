@@ -1,11 +1,12 @@
 import pygame
-from config import FPS, ESCOLHA, SAIR
+import os
+from config import FPS, ESCOLHA, SAIR, PASTA_IMAGENS
 
 
 def tela_inicio(tela):
     relogio = pygame.time.Clock()
 
-    capa = pygame.image.load("imagens/começo.png").convert()
+    capa = pygame.image.load(os.path.join(PASTA_IMAGENS, "começo.png")).convert()
     capa = pygame.transform.scale(capa, tela.get_size())
 
     while True:
@@ -17,6 +18,8 @@ def tela_inicio(tela):
 
             # Espaço sai da capa e abre a escolha
             if evento.type == pygame.KEYDOWN:
+                if evento.key == pygame.K_ESCAPE:
+                    return SAIR
                 if evento.key == pygame.K_SPACE:
                     return ESCOLHA
 

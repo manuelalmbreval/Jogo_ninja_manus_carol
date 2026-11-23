@@ -91,6 +91,7 @@ Vença as duas fases e o jogo mostra quanto tempo você levou.
 
 | Tela | Tecla / Ação | O que faz |
 |------|--------------|-----------|
+| Capa | `Espaço` | Começa o jogo |
 | Escolha | `1`, `2` ou `3` | Escolhe Enzo, Lucas ou Resina |
 | Labirinto | `←` `↑` `→` `↓` | Move o personagem |
 | Labirinto | `Shift` (segurando) | Corre |

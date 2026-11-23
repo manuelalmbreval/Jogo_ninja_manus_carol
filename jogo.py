@@ -35,13 +35,7 @@ dados = {
 
 # Troca de telas 
 
-estado = tela_inicio(tela)
-
-if estado == ESCOLHA:
-    estado = tela_escolha(tela, assets, dados)
-
-
-estado = ESCOLHA
+estado = tela_inicio(tela)      # capa: ESPAÇO vai para a escolha
 while estado != SAIR:
     if estado == ESCOLHA:
         estado = tela_escolha(tela, assets, dados)
