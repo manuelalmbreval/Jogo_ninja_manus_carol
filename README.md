@@ -2,6 +2,13 @@
 
 Um jogo de ação e sorte em pixel art, feito em Python com Pygame: escolha seu ninja, atravesse um labirinto em chamas e enfrente o samurai Resina no topo do templo.
 
+
+# 🎬 Vídeo do jogo
+
+▶️ **Assista ao jogo funcionando:** [Resina Strikes Back – Jogo Pygame](https://youtu.be/fPYB7uB1CGw)
+
+---
+
 # Sobre o projeto
 
 O jogo tem duas fases, inspiradas em jogos de labirinto e no brinquedo 'Pula Pirata', da Estrela:
@@ -125,7 +132,6 @@ Vença as duas fases e o jogo mostra quanto tempo você levou.
 
 # Estrutura do projeto
 
-Resina Strikes Back - Jogo Pygame: https://youtu.be/fPYB7uB1CGw
 
 ```
 Jogo_ninja_manus_carol/
@@ -171,5 +177,3 @@ Projeto feito por:
 # Licença
 
 Este é um projeto acadêmico e ainda não tem uma licença definida.
-
-Resina Strikes Back - Jogo Pygame: https://youtu.be/fPYB7uB1CGw
