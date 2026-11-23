@@ -124,6 +124,8 @@ Vença as duas fases e o jogo mostra quanto tempo você levou.
 
 # Estrutura do projeto
 
+Resina Strikes Back - Jogo Pygame: https://youtu.be/fPYB7uB1CGw
+
 ```
 Jogo_ninja_manus_carol/
 ├── jogo.py              # Arquivo principal: abre a janela e troca entre as telas
@@ -168,3 +170,5 @@ Projeto feito por:
 # Licença
 
 Este é um projeto acadêmico e ainda não tem uma licença definida.
+
+Resina Strikes Back - Jogo Pygame: https://youtu.be/fPYB7uB1CGw
