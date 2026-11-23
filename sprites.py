@@ -1,14 +1,3 @@
-# =====================================================================
-#   sprites.py  ->  as CLASSES do jogo.
-#
-#   Cada coisa que aparece e se mexe na tela é uma classe que herda de
-#   pygame.sprite.Sprite. Toda classe dessas precisa ter:
-#       self.image  -> o desenho
-#       self.rect   -> o retângulo com a posição
-#       update()    -> o que ela faz a cada quadro
-#   Depois a gente coloca os objetos em um pygame.sprite.Group, e o grupo
-#   chama update() e desenha (draw) todo mundo de uma vez.
-# =====================================================================
 import random
 import pygame
 from config import (LARGURA, ALTURA, VELOCIDADE_ANIMACAO, INICIO, GONGO, DIRECOES,
@@ -25,9 +14,7 @@ def eh_parede(mapa, x, y):
     return cor[0] < 128                                     # escuro (perto do preto) = parede
 
 
-# =====================================================================
-#                         PERSONAGENS
-# =====================================================================
+
 class Personagem(pygame.sprite.Sprite):
     # Um personagem animado PARADO num lugar (tela de escolha, templo, vitória).
     def __init__(self, assets, nome, x, y, escala=1, estado="parado"):
@@ -135,10 +122,6 @@ class Ninja(Personagem):
 
         self.animar()
 
-
-# =====================================================================
-#                      FASE 1: LABIRINTO
-# =====================================================================
 class BolaDeFogo(pygame.sprite.Sprite):
     def __init__(self, assets, x, y, velocidade):
         pygame.sprite.Sprite.__init__(self)
@@ -231,9 +214,7 @@ class Gongo(pygame.sprite.Sprite):
             self.image = self.imagem_fechado
 
 
-# =====================================================================
-#                      FASE 2: TEMPLO
-# =====================================================================
+#fase 2 templo
 class Buraco(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
